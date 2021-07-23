@@ -162,6 +162,23 @@ public class ResourceCentreTest {
 	public void testDoLoanChromebook() {
 		// fail("Not yet implemented");
 		// write your code here
+		assertNotNull("Test if there is valid Chromebook arraylist to add to", chromebookList);
+
+		// Given an empty list, after adding 1 item, the size of the list is 1
+		ResourceCentre.addChromebook(chromebookList, cb1);
+		
+		Boolean okay = ResourceCentre.doLoanChromebook(chromebookList, "CB0011", "8-8-2020");
+		assertFalse("test if same item is NOT ok to loan again", okay);
+		
+		ResourceCentre.addChromebook(chromebookList, cb2);
+		cb2.setIsAvailable(false);
+		okay = ResourceCentre.doLoanChromebook(chromebookList, "CB0012", "8-8-2020" );
+		assertFalse("test that unavailable item is NOT ok to loan", okay);
+		
+		okay = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
+		assertFalse("test that unavailable item is NOT ok to loan", okay);
+		
+		
 	}
 
 	@Test
