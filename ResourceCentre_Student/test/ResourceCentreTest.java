@@ -48,6 +48,7 @@ public class ResourceCentreTest {
 		assertEquals("Test that Camcorder arraylist size is 2?", 2, camcorderList.size());
 	}
 
+	//JANNICE EDIT TEST ADD CHROMEBOOK METHOD 23/07 
 	@Test
 	public void testAddChromebook() {
 		// fail("Not yet implemented");
@@ -86,18 +87,14 @@ public class ResourceCentreTest {
 		// test if the expected output string same as the list of camcorders retrieved
 		// from the SourceCentre
 		allCamcorder = ResourceCentre.retrieveAllCamcorder(camcorderList);
-
-//		cb1 = new Chromebook("", "", "Mac OS");
-//		cb2 = new Chromebook("", "", "Win 10");
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Yes", "",
-				40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "",
-				20);
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0011", "Nikon HDSLR", "Yes", "", 40);
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
 
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allCamcorder);
 
 	}
 
+	//JANNICE EDIT TEST RETRIVE ALL CHROMEBOOK
 	@Test
 	public void testRetrieveAllChromebook() {
 		// fail("Not yet implemented");
@@ -119,10 +116,11 @@ public class ResourceCentreTest {
 		// test if the expected output string same as the list of Chromebook retrieved
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
-
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0011", "Nikon HDSLR", "Yes", "", 40);
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CC0012", "Sony DSC-RX100M7", "Yes", "", 20);
-
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Yes", "Mac OS",
+				40);
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "Win 10",
+				20);
+		
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
 
 	}
