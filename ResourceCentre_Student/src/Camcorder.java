@@ -14,7 +14,6 @@ public class Camcorder extends Item{
 	public String toString(){
 		String output = "";
 		// Write your codes here
-		//TEST
 		return output;
 	}
 }
