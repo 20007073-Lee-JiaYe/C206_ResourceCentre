@@ -179,7 +179,6 @@ public class ResourceCentreTest {
 		okay = ResourceCentre.doLoanChromebook(chromebookList, "CB0013", "8-8-2020" );
 		assertFalse("test that unavailable item is NOT ok to loan", okay);
 		
-		
 	}
 	
 	//junpeng
