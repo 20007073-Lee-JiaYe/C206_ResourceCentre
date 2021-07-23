@@ -106,7 +106,7 @@ public class ResourceCentreTest {
 		// test if the list of chromebook retrieved from the SourceCentre is empty
 		String allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
 		String testOutput = "";
-		assertEquals("Check that ViewAllChromebooklist", testOutput, chromebookList);
+		assertEquals("Check that ViewAllChromebooklist", testOutput, allChromebook);
 
 		// Given an empty list, after adding 2 items, test if the size of the list is 2
 		ResourceCentre.addChromebook(chromebookList, cb1);
@@ -116,13 +116,14 @@ public class ResourceCentreTest {
 		// test if the expected output string same as the list of Chromebook retrieved
 		// from the SourceCentre
 		allChromebook = ResourceCentre.retrieveAllChromebook(chromebookList);
-		testOutput = String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0011", "My Google Chromebook 1st", "Yes", "","Mac OS");
-		testOutput += String.format("%-10s %-30s %-10s %-10s %-20d\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
+		testOutput = String.format("%-10s %-30s %-10s %-10s %-20s\n", "CB0011", "My Google Chromebook 1st", "Yes", "","Mac OS");
+		testOutput += String.format("%-10s %-30s %-10s %-10s %-20s\n", "CB0012", "SAMSUNG Chromebook 4+", "Yes", "", "Win 10");
 		
 		assertEquals("Check that ViewAllCamcorderlist", testOutput, allChromebook);
 
 	}
 
+	// Shirin
 	@Test
 	public void testDoLoanCamcorder() {
 		// fail("Not yet implemented");
@@ -180,14 +181,31 @@ public class ResourceCentreTest {
 		
 		
 	}
-
+	
+	//junpeng
 	@Test
 	public void testDoReturnCamcorder() {
-		// fail("Not yet implemented");
-		// write your code here
-
+		//boundary
+		assertNotNull("Test if there is a valid Camcorder arraylist to add to", camcorderList);
+		ResourceCentre.addCamcorder(camcorderList, cc1);
+		
+		//error
+		Boolean isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0011");
+		assertFalse("Test if available camcorder CC0011 is returned - false?", isReturned);
+		
+		//normal
+		ResourceCentre.addCamcorder(camcorderList, cc2);
+		cc2.setIsAvailable(false);
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0012");
+		assertTrue("Test if loaned out camcorder CC0012 is returned - true", isReturned);
+		
+		//error
+		isReturned = ResourceCentre.doReturnCamcorder(camcorderList, "CC0013");
+		assertFalse("Test if non-existing camcorder CC0013 is returned - false?", isReturned);
+		
 	}
 
+	//JANNICE TEST 
 	@Test
 	public void testDoReturnChromebook() {
 		// write your code here
@@ -201,8 +219,8 @@ public class ResourceCentreTest {
 		
 		//NORMAL
 		ResourceCentre.addChromebook(chromebookList, cb1);
-		cb2.setIsAvailable(false);
-		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0012");
+		cb1.setIsAvailable(false); // not avail thats why can return
+		isReturned = ResourceCentre.doReturnChromebook(chromebookList, "CB0011");
 		assertTrue("Test if loaned out chromebook CB0012 is returned -true", isReturned);
 		
 		//ERROR
