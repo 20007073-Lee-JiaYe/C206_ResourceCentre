@@ -123,6 +123,7 @@ public class ResourceCentreTest {
 
 	}
 
+	// Shirin
 	@Test
 	public void testDoLoanCamcorder() {
 		// fail("Not yet implemented");
