@@ -173,7 +173,6 @@ public class ResourceCentreTest {
 
 	@Test
 	public void testDoReturnChromebook() {
-		// fail("Not yet implemented");
 		// write your code here
 		//BOUNDARY
 		assertNotNull("Test if there is valid Chromebook arraylist to add to" , chromebookList);
