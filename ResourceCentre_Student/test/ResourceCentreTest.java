@@ -123,6 +123,7 @@ public class ResourceCentreTest {
 
 	}
 
+	//SHIRIN
 	@Test
 	public void testDoLoanCamcorder() {
 		// fail("Not yet implemented");
