@@ -119,6 +119,5 @@ public class ResourceCentreTest {
 		chromebookList = null;
 
 	}
-	//testing2
 
 }
