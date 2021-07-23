@@ -139,7 +139,7 @@ public class ResourceCentre {
 		ResourceCentre.setHeader("CAMCORDER LIST");
 		String output = String.format("%-10s %-30s %-10s %-10s %-20s\n", "ASSET TAG", "DESCRIPTION",
 				"AVAILABLE", "DUE DATE","OPTICAL ZOOM");
-		 output += retrieveAllCamcorder(camcorderList);	
+		 output += retrieveAllCamcorder(camcorderList);
 		System.out.println(output);
 	}
 
